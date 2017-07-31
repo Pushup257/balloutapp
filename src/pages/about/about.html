@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-navbar color ="main">
+    <ion-title><b>Host</b></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+         <img class="image" src="PicCollage.png"/>
+      <div class="info">
+     <ion-item>
+    <ion-input type="text"[(ngModel)]="gameObj.name" placeholder="Name of Event"></ion-input>
+  </ion-item>
+      <ion-item>
+    <ion-input type="text" [(ngModel)]="gameObj.location" placeholder="Location"></ion-input>
+  </ion-item>
+   <ion-item>
+    <ion-input type="text" [(ngModel)]="gameObj.time" placeholder="Time of Game"></ion-input>
+  </ion-item>
+   <ion-item>
+      <ion-label>Type of sport</ion-label>
+      <ion-select [(ngModel)]="gameObj.game_type" interface="popover">
+        <ion-option value="1">Basketball</ion-option>
+        <ion-option value="2">Soccer</ion-option>
+      </ion-select>
+    </ion-item>
+     <ion-item>
+      <ion-label>Duration of Game</ion-label>
+      <ion-select [(ngModel)]="gameObj.duration" interface="popover">
+        <ion-option value="1">30 min</ion-option>
+        <ion-option value="2">45 min</ion-option>
+        <ion-option value="3">1 hour</ion-option>
+        <ion-option value="4">1hr 30min</ion-option>
+      </ion-select>
+    </ion-item>
+       <ion-item>
+      <ion-label>Intensity</ion-label>
+      <ion-select [(ngModel)]="gameObj.intensity" interface="popover">
+        <ion-option value="Compete">For fun</ion-option>
+        <ion-option value="compete">Competitive</ion-option>
+      </ion-select>
+    </ion-item>
+     <ion-item>
+      <ion-label>Amount of players</ion-label>
+      <ion-select [(ngModel)]="gameObj.player_count" interface="popover">
+        <ion-option value="1">2-4</ion-option>
+        <ion-option value="2">6-10</ion-option>
+        <ion-option value="3">12-20</ion-option>
+        <ion-option value="4">+20</ion-option>
+      </ion-select>
+    </ion-item>
+      </div>
+  <div class="button">
+  <button ion-button color="dark" (click)="sendGameData()">Host</button>
+  </div>
+</ion-content>
